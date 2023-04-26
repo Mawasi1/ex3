@@ -20,8 +20,10 @@ body {
 }
 
 header {
+    display: flex;
     height: 130px;
     background-color: #F2E9E9;
+    justify-content: center;
 
     padding-top: 1px;
 }
@@ -60,7 +62,7 @@ a {
     letter-spacing: 0em;
     text-decoration: none;
     color: #000000;
-    
+
 
 }
 
@@ -135,15 +137,34 @@ aside>section>p {
 }
 
 .rect {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Amiko;
+    font-size: 64px;
 
-
-
-
-    background-color: var(--background, #EBEF18)
+    background-color: var(--background, #EBEF18);
 }
 
-.rect:hover{
-    background-color: azure;
+.hidden{
+    opacity: 0;
+  cursor: pointer;
+}
+
+.revealed {
+    opacity: 1;
+  }
+
+.rect:hover {
+    background-color: rgb(117, 181, 181);
+    
+    
+   
+}
+
+#score{
+    margin-top: 50px;
 }
 
 
@@ -523,7 +544,7 @@ section#aside-and-boxes2 {
 
 }
 
-.nour:hover{
+.nour:hover {
     opacity: 0.3;
 }
 
@@ -568,7 +589,7 @@ section#aside-and-boxes2 {
 .wrapper-3 {
     display: flex;
     flex-wrap: wrap;
-    height: 995px;
+    min-height: 995px;
 
 
 
@@ -576,8 +597,19 @@ section#aside-and-boxes2 {
 
 }
 
+.rect-generator {
+    height: 80px;
+    width: 80px;
+    border-radius: 0px;
+    background-color: #000000;
+    margin-top: 21px;
+    margin-right: 24px;
+    margin-left: 1420px;
+    
+}
+
 .left-side {
-    height: 995px;
+    min-height: 995px;
     width: 372px;
     left: 0px;
     top: 123px;
@@ -589,14 +621,16 @@ section#aside-and-boxes2 {
 }
 
 .mid {
-    height: 995px;
-
+    min-height: 995px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     flex: 1;
 }
 
 .right-side {
 
-    height: 995px;
+   min-height: 995px;
     width: 104px;
     left: 1336px;
     top: 123px;
@@ -610,11 +644,9 @@ section#aside-and-boxes2 {
 
 .bottom {
     height: 463px;
-
     left: 0px;
     top: 1118px;
     border-radius: 0px;
-
     background-color: #EBEF18;
 }
 
@@ -633,20 +665,27 @@ section#aside-and-boxes2 {
         background-color: #E5E5E5;
     }
 
-    header{
-        height: 100px;
+    header {
+        max-height: 100px;
     }
 
     .right-side {
         display: none;
     }
 
-    .left-side{
-        height: 100px;
+    .left-side {
+        min-height: unset;
+        height: 120px;
         width: 1440px;
         justify-content: center;
     }
-    .mid{
+
+    .mid {
         background-color: white;
+    }
+
+    #score{
+        margin-top: -32px;
+        margin-left: 500px;
     }
 }
