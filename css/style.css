@@ -28,6 +28,16 @@ header {
     padding-top: 1px;
 }
 
+.header-3{
+    display: flex;
+    height: 130px;
+    background-color: #F2E9E9;
+    justify-content: right;
+
+    padding-top: 1px;
+
+}
+
 
 
 
@@ -147,23 +157,23 @@ aside>section>p {
     background-color: var(--background, #EBEF18);
 }
 
-.hidden{
+.hidden {
     opacity: 0;
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .revealed {
     opacity: 1;
-  }
+}
 
 .rect:hover {
     background-color: rgb(117, 181, 181);
-    
-    
-   
+
+
+
 }
 
-#score{
+#score {
     margin-top: 50px;
 }
 
@@ -604,8 +614,8 @@ section#aside-and-boxes2 {
     background-color: #000000;
     margin-top: 21px;
     margin-right: 24px;
-    margin-left: 1420px;
     
+
 }
 
 .left-side {
@@ -621,7 +631,7 @@ section#aside-and-boxes2 {
 }
 
 .mid {
-    min-height: 995px ;
+    min-height: 995px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -630,7 +640,7 @@ section#aside-and-boxes2 {
 
 .right-side {
 
-   min-height: 995px;
+    min-height: 995px;
     width: 104px;
     left: 1336px;
     top: 123px;
@@ -684,7 +694,13 @@ section#aside-and-boxes2 {
         background-color: white;
     }
 
-    #score{
+    .rect-generator {
+        margin-top: 21px;
+        margin-right: 24px;
+
+    }
+
+    #score {
         margin-top: -32px;
         margin-left: 500px;
     }
