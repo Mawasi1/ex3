@@ -4,9 +4,15 @@ let rectCount = 0;
 let clickCount = 0;
 let clickArray = [];
 let score = 0;
+let revealed=0;
+
+
 
 function generateSquares(id) {
+   
+
     if (rectCount < 12) {
+        
         const rect = document.createElement('div');
         rect.classList.add('rect');
         rect.id = id;
@@ -30,12 +36,16 @@ function generateSquares(id) {
 
             clickArray.push(letter);
             clickCount++;
+            revealed++;
             if (clickCount == 2) {
                 const result = compareLetters(clickArray[0], clickArray[1]);
                 result == true ? match(clickArray) : mismatch(clickArray);
                 clickCount = 0;
                 clickArray.length = 0;
 
+            }
+            if(revealed === 12){
+                endGameResult();
             }
         });
     }
@@ -58,11 +68,12 @@ function compareLetters(firstLetter, secondLetter) {
 
 function mismatch(array) {
     array.forEach(array => {
-        array.style.backgroundColor = 'red';
-        
+        array.style.backgroundColor = '#8B0000';
+
 
     });
-
+    document.getElementById('reset').style.visibility = 'visible';
+    negativeResultFeedback();
 }
 
 function match(array) {
@@ -71,9 +82,38 @@ function match(array) {
 
     });
     score++;
-    document.getElementById("score").innerHTML = `SCORE: ${score}`;
-
+    document.getElementById("score").innerHTML = `SCORE: ${score}/6`;
+    document.getElementById('reset').style.visibility = 'visible';
+    positiveResultFeedback();
 }
 
 
+function refreshPage() {
+    window.location.reload();
+}
 
+
+function positiveResultFeedback(){
+    const array=['nice','you got it','keep going'];
+    let x = array[Math.floor(Math.random() * array.length)];
+    document.getElementById('result-feedback').innerHTML = x;
+}
+
+
+function negativeResultFeedback(){
+    const array=['oh no','unlucky :(','take the L',];
+    let x = array[Math.floor(Math.random() * array.length)];
+    document.getElementById('result-feedback').innerHTML = x;
+}
+
+function endGameResult(){
+    if(score === 6){
+        alert('you should buy a lottery ticket');
+        return;
+    }
+    if(score > 2){
+        alert('you pass!');
+        return;
+    }
+    alert('you fail');
+}
